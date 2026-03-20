@@ -24,4 +24,4 @@ Experience the interactive version live here:
 ## 👤 Author
 - **Haleema Sadia**
 - GitHub: [@hs5042708-web](https://github.com/hs5042708-web)
-- Role: Web Development Intern | Trainee
+- Role: Web Development 
