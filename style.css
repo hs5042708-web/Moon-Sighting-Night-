@@ -1,0 +1,87 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+
+  /* 1. Deep Midnight Blue Background */
+  background-color: #020617;
+
+  /* 2. Pure CSS Stars: Yeh URL load hone ka wait nahi karega */
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 130px 80px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
+
+  background-size: 200px 200px; /* Stars ko poori screen par repeat karega */
+  background-repeat: repeat;
+
+  overflow: hidden;
+  cursor: none;
+  font-family: "Inter", sans-serif;
+}
+
+/* Spotlight ko thoda aur smooth karne ke liye update */
+.spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle 120px at var(--x) var(--y),
+    rgba(0, 0, 0, 0) 0%,
+    rgba(2, 6, 23, 0.98) 100%
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hidden-moon {
+  font-size: 5rem;
+  position: absolute;
+  cursor: pointer;
+  filter: brightness(0);
+  transition:
+    filter 0.3s,
+    transform 0.3s;
+}
+
+.hidden-moon.revealed {
+  filter: brightness(1) drop-shadow(0 0 30px #f4d03f);
+  transform: scale(1.2);
+}
+
+.message {
+  display: none;
+  text-align: center;
+  color: white;
+  z-index: 20;
+}
+
+.message h1 {
+  font-size: 4rem; /* Thora bara kar diya impact ke liye */
+  background: linear-gradient(to right, #f4d03f, #ffcc33);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(244, 208, 63, 0.5);
+  margin: 0;
+}
+
+.message p {
+  font-size: 1.5rem;
+  opacity: 0.8;
+  margin-top: 10px;
+} /* <--- Yeh wala bracket lagana hai */
